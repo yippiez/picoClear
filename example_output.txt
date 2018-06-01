@@ -1,0 +1,8 @@
+if(t()>60) print("hey")
+function sayHello() 
+print("hey")
+end
+if(t()>60) print("hey")
+function sayHello() 
+print("hey")
+end

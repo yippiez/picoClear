@@ -1,0 +1,11 @@
+--todo
+--Print hello world instead of hey
+
+--if a minute passed then print hey
+if(t()>60) print("hey")
+
+--code
+
+function sayHello() -- says hello
+print("hey")
+end
