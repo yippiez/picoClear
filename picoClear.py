@@ -1,8 +1,9 @@
 #todo
 #multiline comment --Done--
+#cleans the file --Done--
 #true false changing to t f
 #time for t
-#
+#long if statemen shortening
 #
 #
 #
@@ -15,11 +16,14 @@ import re
 filename=""
 output=[]
 mline=False #multi-line commens
+#checks if t=true or f=false declared in pico-8 code
+tDeclared=False
+fDeclared=False
 
 for file in glob.glob('input\*.txt'):
     filename=file
     with open(file, 'r') as f:
-        _str = f.read().splitlines() 
+        _str = f.read().splitlines()
 
 
 filtered = filter(lambda x: not re.match(r'^\s*$', x), _str)
@@ -32,7 +36,7 @@ for i in filtered:
 filename=filename[6:]
 print(filename)
 print("This is your code: {}\n".format(filename))
-for line in output:   
+for line in output:
     print(line)
 
 filename=filename.split(".txt")[0]
@@ -44,7 +48,7 @@ edit_out=lambda string,out: string.split(out)[0]
 
 for index,line in enumerate(output):
     #edits stuff out
-    content=line 
+    content=line
     if("--[[" in line):
         mline=True
         content=line
@@ -63,12 +67,12 @@ for index,line in enumerate(output):
         content=""
     print(content)
     output[index]=content
-        
+
 
 print("Creating a {}".format(filename))
 #clears the current file
 with open(filename,'w'): pass
-#
+#adds if line is not empty
 for i in output:
     with open(filename, "a") as f:
         if(i!=""):
