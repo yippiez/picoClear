@@ -1,6 +1,6 @@
 --todo
 --Print hello world instead of hey
-
+//another comment type
 --if a minute passed then print hey
 if(t()>60) print("hey")
 
@@ -9,3 +9,10 @@ if(t()>60) print("hey")
 function sayHello() -- says hello
 print("hey")
 end
+
+--[[
+this
+is
+a
+comment
+]]--

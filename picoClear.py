@@ -1,4 +1,12 @@
-#glob is for reading any 
+#todo
+#multiline comment --Done--
+#true false changing to t f
+#time for t
+#
+#
+#
+#
+#glob is for reading any files in input
 import glob
 #for sorting the input out a bit
 import re
@@ -6,6 +14,7 @@ import re
 
 filename=""
 output=[]
+mline=False #multi-line commens
 
 for file in glob.glob('input\*.txt'):
     filename=file
@@ -31,13 +40,35 @@ filename=filename + "_output.txt"
 
 print("Now editing your code:")
 
+edit_out=lambda string,out: string.split(out)[0]
+
 for index,line in enumerate(output):
-    content=line.split("--")[0]
+    #edits stuff out
+    content=line 
+    if("--[[" in line):
+        mline=True
+        content=line
+        print("found --[[")
+    elif("]]--" in line):
+        content=""
+        mline=False
+        print("found ]]--")
+    elif("--" in line):
+        content=edit_out(line,"--")
+        print("found --")
+    elif("//" in line):
+        content=edit_out(line,"//")
+        print("found //")
+    if(mline):
+        content=""
+    print(content)
     output[index]=content
-
-
+        
 
 print("Creating a {}".format(filename))
+#clears the current file
+with open(filename,'w'): pass
+#
 for i in output:
     with open(filename, "a") as f:
         if(i!=""):
