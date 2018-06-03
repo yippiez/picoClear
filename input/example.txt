@@ -4,9 +4,22 @@
 --if a minute passed then print hey
 if(t()>60) print("hey")
 
+t=true
+f=false
+
 --code
 
+--Replace this with t f fort shortening
+alive=true
+dead=false
+enemySpawner=false
+
 function sayHello() -- says hello
+print("hey")
+end
+
+//auto shorten this as if(condition) execute and time as t
+if time()>120 then
 print("hey")
 end
 
