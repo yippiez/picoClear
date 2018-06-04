@@ -1,4 +1,12 @@
+t=true
+f=false
 if(t()>60) print("hey")
-function sayHello() 
+alive=t
+dead=f
+enemySpawner=f
+function sayHello()
+print("hey")
+end
+if time()>120 then
 print("hey")
 end

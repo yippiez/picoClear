@@ -4,11 +4,9 @@
 --if a minute passed then print hey
 if(t()>60) print("hey")
 
-t=true
-f=false
-
 --code
-
+-- there is no t=true and f=false here it will get created by
+-- the program.
 --Replace this with t f fort shortening
 alive=true
 dead=false
