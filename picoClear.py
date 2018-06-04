@@ -1,11 +1,11 @@
 #todo
 #multiline comment --Done--
 #cleans the file --Done--
-#true false changing to t f
-#time for t
+#true false changing to t f --Done--
+#time for t function
 #long if statemen shortening
-#
-#
+#Bug: is_true gets replaced by is_t remove that from happening
+#Replace print with ?
 #
 #glob is for reading any files in input
 import glob
@@ -47,7 +47,7 @@ print("Now editing your code:")
 edit_out=lambda string,out: string.split(out)[0]
 
 for index,line in enumerate(output):
-    #edits stuff out
+    #edits stuff out elif is neccesary
     content=line
     if("--[[" in line):
         mline=True
@@ -65,6 +65,12 @@ for index,line in enumerate(output):
         print("found //")
     if(mline):
         content=""
+    if("true" in line):
+        print("found true")
+        content=content.replace("true", "t")
+    if("false" in line):
+        print("found false")
+        content=content.replace("false", "f")
     print(content)
     output[index]=content
 
@@ -73,7 +79,9 @@ print("Creating a {}".format(filename))
 #clears the current file
 with open(filename,'w'): pass
 #adds if line is not empty
-for i in output:
-    with open(filename, "a") as f:
+with open(filename, "a") as f:
+    f.write("t=true \n")
+    f.write("f=false \n")
+    for i in output:
         if(i!=""):
             f.write(i + "\n")
